@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fifteen Puzzle</title>
+	<link rel="stylesheet" href="fifteen.css">
+	<script src="fifteen.js"></script>
+</head>
+<body>
+<div class="title">
+	<h1>Fifteen Puzzle</h1>
+</div>
+
+<div class="flex-body">
+
+<div class="leftSide">
+	<button id="rulesButton" onclick="makeItPop()">View Rules</button><br>
+	<div id="centerPuzzle">
+		<div id="timer">Time: 0 seconds</div>
+		<div id="puzzleRegion">
+			<!-- the following are the fifteen puzzle pieces -->
+			<div>1</div>  <div>2</div>  <div>3</div>  <div>4</div>
+			<div>5</div>  <div>6</div>  <div>7</div>  <div>8</div>
+			<div>9</div>  <div>10</div> <div>11</div> <div>12</div>
+			<div>13</div> <div>14</div> <div>15</div>
+		</div>
+		
+			<div id="controls">
+				<button id="shufflebutton" onclick="changeButtonLabel()">Begin!</button><br><br>
+			</div>
+		</div>
+	
+		<audio id="music" controls style="display:none">
+				<source src="blackRider.mp3" type="audio/mp3" >
+				Your browser does not support the audio element.
+			</audio>
+</div>
+
+
+<div class="rightSide">
+	<div class="button-container">
+	<button onclick="changeBackground('0')"><img src="background.jpg" alt="Image Button" class="backgroundss"></button>
+	<button onclick="changeBackground('1')"><img src="donkeykong.jpg" alt="Image Button" class="backgroundss"></button>
+	<button onclick="changeBackground('2')"><img src="galaxy.jpg" alt="Image Button" class="backgroundss"></button>
+	<button onclick="changeBackground('3')"><img src="Bowser.png" alt="Image Button" class="backgroundss"></button>
+	</div>
+	<div id="leaderboard">
+		<h2>Leaderboard</h2>
+		<table id="leaderboardTable">
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Time</th>
+					<th>Moves</th>
+				</tr>
+			</thead>
+			<tbody>
+	<!-- Rows for leaderboard with ranks #1 to #10 -->
+				<tr><td>#1</td><td></td><td></td></tr>
+				<tr><td>#2</td><td></td><td></td></tr>
+				<tr><td>#3</td><td></td><td></td></tr>
+				<tr><td>#4</td><td></td><td></td></tr>
+				<tr><td>#5</td><td></td><td></td></tr>
+				<tr><td>#6</td><td></td><td></td></tr>
+				<tr><td>#7</td><td></td><td></td></tr>
+				<tr><td>#8</td><td></td><td></td></tr>
+				<tr><td>#9</td><td></td><td></td></tr>
+				<tr><td>#10</td><td></td><td></td></tr>
+			</tbody>
+		</table>
+</div>
+</div>
+</div>
+	
+<p class="validator">
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fcodd.cs.gsu.edu%2F%7Etbalde3%2FJsProject%2Ffifteen.html">
+	<img src="w3c-xhtml.png" alt="Valid CSS!"> </a>
+	<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fcodd.cs.gsu.edu%2F~tbalde3%2FHW%2FHW2%2Ftmnt.html">
+	<img src="jslint.png" alt="Valid HTML!">
+	</a>
+	<a href="http://jigsaw.w3.org/css-validator/validator?lang=en&profile=css3svg&uri=https%3A%2F%2Fcodd.cs.gsu.edu%2F%7Etbalde3%2FJsProject%2Ffifteen.html&usermedium=all&vextwarning=&warning=1">
+		<img src="w3c-css.png" alt="Valid CSS!"> </a>
+</p>
+	
+
+	<div id="rulesPopUp">
+
+		<p class="explanation"> The goal of the fifteen puzzle is to un-jumble its fifteen squares by repeatedly making moves that slide squares into the empty space.</p> <br>
+		<p class="explanation">
+			American puzzle author and mathematician Sam Loyd is often falsely credited with creating the puzzle;
+			<br> Loyd claimed from 1891 until his death in 1911 that he invented it. The puzzle was actually created around 1874 
+			<br> by Noyes Palmer Chapman, a postmaster in Canastota, New York.</p>
+		<p> Close the rules and click Begin to get Started.  How quickly can you solve it?</p>
+
+	</div>
+	<div id="youWon">
+		<p> Congratulations, you won!!!!</p> <br>
+		<img src="todd.gif" alt="Image 1">
+		<div id="textContent"></div>
+		<button id="restart" onclick="restart()">Restart</button>
+	</div>
+
+</body>
+</html>
